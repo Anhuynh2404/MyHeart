@@ -846,14 +846,6 @@ const ConstellationHeart: React.FC = () => {
     };
   }, []);
 
-  const vows = [
-    "Anh sẽ luôn lắng nghe em.",
-    "Luôn nắm tay khi em thấy chông chênh.",
-    "Chăm chỉ vì tương lai của chúng mình.",
-    "Nhường em phần ngon nhất.",
-    "Gửi em một chiếc ôm mỗi ngày.",
-    "Gửi em một chiếc ôm mỗi ngày.",
-  ];
 
   return (
     <section className="relative min-h-[92vh] bg-black text-white flex items-center justify-center overflow-hidden">
@@ -947,6 +939,7 @@ const ConstellationHeart: React.FC = () => {
 
         <p className="mt-6 text-sm opacity-70">
           Giữa hàng tỷ vì sao, ánh sáng của em là điều anh luôn hướng đến.
+
         </p>
       </div>
     </section>
@@ -970,7 +963,7 @@ const GrandFinale: React.FC = () => {
   const MAPS_URL =
     EXTERNAL_LINK ||
     `https://www.google.com/maps?q=${MEETING_POINT.lat},${MEETING_POINT.lng}`;
-  const TEL_LINK = "tel:+84xxxxxxxxx"; // <-- thay số thật của bạn
+
 
   const rand = (min: number, max: number) => Math.random() * (max - min) + min;
   const runAway = (
