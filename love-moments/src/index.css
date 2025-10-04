@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tuỳ chọn: full-height */
+html, body, #root { height: 100%; }
+
