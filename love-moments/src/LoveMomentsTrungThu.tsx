@@ -26,28 +26,13 @@ const AUDIO_URL = "/audio/nhacf.mp3"; // đặt file ở public/audio (tuỳ ch�
 
 // Thay các ảnh này bằng ảnh của bạn (để trong public/images)
 const IMAGES: { src: string; caption?: string }[] = [
-  { src: "/images/01.jpg", caption: "Mình gặp nhau dưới ánh đèn phố." },
   { src: "/images/02.jpg", caption: "Nụ cười em – điều bình yên nhất." },
-  { src: "/images/03.jpg", caption: "Một chiếc kẹo kéo, hai trái tim." },
-  { src: "/images/04.jpg", caption: "Gió dịu và tay nắm thật lâu." },
   { src: "/images/05.jpg", caption: "Đêm rằm, đèn lồng, và lời hứa nhỏ." },
   { src: "/images/06.jpg", caption: "Khoảnh khắc muốn giữ mãi." },
   { src: "/images/07.jpg", caption: "Mình gặp nhau dưới ánh đèn phố." },
-  { src: "/images/08.jpg", caption: "Nụ cười em – điều bình yên nhất." },
-  { src: "/images/09.jpg", caption: "Một chiếc kẹo kéo, hai trái tim." },
-  { src: "/images/10.jpg", caption: "Gió dịu và tay nắm thật lâu." },
   { src: "/images/11.jpg", caption: "Đêm rằm, đèn lồng, và lời hứa nhỏ." },
-  { src: "/images/12.jpg", caption: "Khoảnh khắc muốn giữ mãi." },
-  { src: "/images/13.jpg", caption: "Mình gặp nhau dưới ánh đèn phố." },
-  { src: "/images/14.jpg", caption: "Nụ cười em – điều bình yên nhất." },
-  { src: "/images/15.jpg", caption: "Một chiếc kẹo kéo, hai trái tim." },
   { src: "/images/16.jpg", caption: "Gió dịu và tay nắm thật lâu." },
-  { src: "/images/17.jpg", caption: "Đêm rằm, đèn lồng, và lời hứa nhỏ." },
-  { src: "/images/18.jpg", caption: "Khoảnh khắc muốn giữ mãi." },
-  { src: "/images/19.jpg", caption: "Mình gặp nhau dưới ánh đèn phố." },
   { src: "/images/20.jpg", caption: "Nụ cười em – điều bình yên nhất." },
-  { src: "/images/21.jpg", caption: "Một chiếc kẹo kéo, hai trái tim." },
-  { src: "/images/22.jpg", caption: "Gió dịu và tay nắm thật lâu." },
   { src: "/images/23.jpg", caption: "Đêm rằm, đèn lồng, và lời hứa nhỏ." },
   { src: "/images/24.jpg", caption: "Khoảnh khắc muốn giữ mãi." },
   { src: "/images/25.jpg", caption: "Nụ cười em – điều bình yên nhất." },
@@ -55,14 +40,12 @@ const IMAGES: { src: string; caption?: string }[] = [
   { src: "/images/27.jpg", caption: "Gió dịu và tay nắm thật lâu." },
   { src: "/images/28.jpg", caption: "Đêm rằm, đèn lồng, và lời hứa nhỏ." },
   { src: "/images/29.jpg", caption: "Khoảnh khắc muốn giữ mãi." },
-  { src: "/images/30.jpg", caption: "Nụ cười em – điều bình yên nhất." },
   { src: "/images/31.jpg", caption: "Một chiếc kẹo kéo, hai trái tim." },
   { src: "/images/32.jpg", caption: "Gió dịu và tay nắm thật lâu." },
   { src: "/images/33.jpg", caption: "Đêm rằm, đèn lồng, và lời hứa nhỏ." },
   { src: "/images/34.jpg", caption: "Khoảnh khắc muốn giữ mãi." },
   { src: "/images/35.jpg", caption: "Nụ cười em – điều bình yên nhất." },
   { src: "/images/36.jpg", caption: "Một chiếc kẹo kéo, hai trái tim." },
-  { src: "/images/37.jpg", caption: "Gió dịu và tay nắm thật lâu." },
 ];
 
 /******************** UTILITIES ********************/
@@ -501,7 +484,7 @@ const LanternWish: React.FC = () => {
     }>
   >([]);
   const idRef = useRef(0);
-  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjkarnrq"; // <-- thay ID của bạn
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjkarnrq";
 
   async function sendWishSilently(name: string, wish: string) {
     try {
@@ -515,10 +498,12 @@ const LanternWish: React.FC = () => {
           name: name || "Ẩn danh",
           wish,
           timestamp: new Date().toISOString(),
+          site: window.location.href,
         }),
+        mode: "cors",
+        credentials: "omit",
       });
-      // Không cần alert; “im lặng” đúng yêu cầu
-      // Nếu muốn kiểm tra: const data = await res.json();
+      // không alert -> im lặng
       return res.ok;
     } catch {
       return false;
@@ -534,7 +519,7 @@ const LanternWish: React.FC = () => {
       ...prev,
       { id: ++idRef.current, left, dur, delay, wish: wish.trim() },
     ]);
-    sendWishSilently("Co ay",wish.trim());
+    sendWishSilently("Co ay", wish.trim());
     setWish("");
   };
 
@@ -846,7 +831,6 @@ const ConstellationHeart: React.FC = () => {
     };
   }, []);
 
-
   return (
     <section className="relative min-h-[92vh] bg-black text-white flex items-center justify-center overflow-hidden">
       {/* Space gradient (vũ trụ) */}
@@ -939,7 +923,6 @@ const ConstellationHeart: React.FC = () => {
 
         <p className="mt-6 text-sm opacity-70">
           Giữa hàng tỷ vì sao, ánh sáng của em là điều anh luôn hướng đến.
-
         </p>
       </div>
     </section>
@@ -963,7 +946,6 @@ const GrandFinale: React.FC = () => {
   const MAPS_URL =
     EXTERNAL_LINK ||
     `https://www.google.com/maps?q=${MEETING_POINT.lat},${MEETING_POINT.lng}`;
-
 
   const rand = (min: number, max: number) => Math.random() * (max - min) + min;
   const runAway = (
