@@ -256,12 +256,12 @@ export default function GiftPickGame() {
                   onClick={() => {}}
                   className="px-5 py-3 rounded-2xl bg-white text-black font-semibold hover:opacity-90"
                 >
-                  Hí hí biết rồi 💖
+                  Yeahhhh quá đã 💖
                 </button>
               </div>
 
               <p className="mt-3 text-xs text-white/55">
-                *Em đã bốc rồi nên các hộp khác bị khóa nha 😝
+                *Chỉ được 1 lần thôi cô nương😝
               </p>
             </motion.div>
           </motion.div>
