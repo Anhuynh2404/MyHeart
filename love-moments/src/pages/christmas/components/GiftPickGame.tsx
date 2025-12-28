@@ -178,11 +178,10 @@ export default function GiftPickGame() {
           transition={{ duration: 0.5 }}
           className="text-3xl sm:text-4xl font-extrabold"
         >
-          🎁 BỐC THĂM NOEL
+          🎁 Lucky Random
         </motion.h2>
         <p className="mt-3 text-white/70 text-sm sm:text-base">
-          Chọn <span className="font-semibold text-white">1</span> hộp bất kỳ. Mở xong là{" "}
-          <span className="font-semibold text-white">không mở lại</span> được nữa nha 😝
+          Chọn <span className="font-semibold text-white">1</span> hộp bất kỳ 😝
         </p>
 
         {state.picked && (
@@ -216,7 +215,6 @@ export default function GiftPickGame() {
       <div className="mx-auto max-w-3xl mt-10 text-center">
         {!state.picked ? (
           <div className="text-white/60 text-sm">
-            *Box #1 “ngon” hơn Box #6 đó nha 😏
           </div>
         ) : (
           <button

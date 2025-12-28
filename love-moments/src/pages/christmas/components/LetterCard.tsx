@@ -1,7 +1,7 @@
 // src/pages/christmas/components/LetterCard.tsx
 import { motion } from "framer-motion";
 
-const LETTER_IMAGE = "/public/images/giangsinh3.png"; // đặt file vào public/images/xmas-letter.png
+const LETTER_IMAGE = "/images/giangsinh3.png"; // đặt file vào public/images/xmas-letter.png
 
 export default function LetterCard() {
   return (

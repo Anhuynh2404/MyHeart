@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Snowfall from "../components/Snowfall";
 import LetterCard from "../components/LetterCard";
 
-const AUDIO_URL = "/public/audio/giangsihp.mp3"; 
+const AUDIO_URL = "/audio/giangsihp.mp3"; 
 
 function useAudio(url?: string) {
   const [playing, setPlaying] = useState(false);
